@@ -7,6 +7,9 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('collectie');
+  this.route('opgeslagen');
+  this.route('about');
 });
 
 export default Router;
