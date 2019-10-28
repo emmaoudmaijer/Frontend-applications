@@ -5,62 +5,142 @@
     Hier vind je alle voorwerpen die met film/foto's te maken hebben uit het nationaal museum voor wereldculturen
   </p>
   {{#link-to "opgeslagen" class="button"}}
-   Opgeslagen voorwerpen
+  Opgeslagen
   {{/link-to}}
 </div>
 {{#each this.model as |rental|}}
+  <h2>2019</h2>
 <section>
-  <article class="listing">
-    <div class="details">
-      <h3>{{rental.title}}</h3>
-      <div class="detail owner">
-        <span>Owner:</span> {{rental.owner}}
-      </div>
-      <div class="detail type">
-        <span>Type:</span> {{rental.category}}
-      </div>
-      <div class="detail location">
-        <span>Location:</span> {{rental.city}}
-      </div>
-      <div class="detail bedrooms">
-        <span>Number of bedrooms:</span> {{rental.bedrooms}}
-      </div>
+  <article>
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
     </div>
   </article>
-  </section>
-  <article class="listing">
-    <div class="details">
-      <h3>{{rental.title}}</h3>
-      <div class="detail owner">
-        <span>Owner:</span> {{rental.owner}}
-      </div>
-      <div class="detail type">
-        <span>Type:</span> {{rental.category}}
-      </div>
-      <div class="detail location">
-        <span>Location:</span> {{rental.city}}
-      </div>
-      <div class="detail bedrooms">
-        <span>Number of bedrooms:</span> {{rental.bedrooms}}
-      </div>
+  <article>
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
     </div>
   </article>
-  <article class="listing">
-    <div class="details">
-      <h3>{{rental.title}}</h3>
-      <div class="detail owner">
-        <span>Owner:</span> {{rental.owner}}
-      </div>
-      <div class="detail type">
-        <span>Type:</span> {{rental.category}}
-      </div>
-      <div class="detail location">
-        <span>Location:</span> {{rental.city}}
-      </div>
-      <div class="detail bedrooms">
-        <span>Number of bedrooms:</span> {{rental.bedrooms}}
-      </div>
+</section>
+  <h2>2018</h2>
+<section>
+  <article>
+
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
     </div>
   </article>
+  <article>
+
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
+    </div>
+  </article>
+</section>
+ <h2>2017</h2>
+<section>
+  <article>
+
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
+    </div>
+  </article>
+  <article>
+
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
+    </div>
+  </article>
+  <article>
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
+    </div>
+  </article>
+  <article>
+    <h3>{{rental.title}}</h3>
+    <div>
+      <span>Owner:</span> {{rental.owner}}
+    </div>
+    <div>
+      <span>Type:</span> {{rental.category}}
+    </div>
+    <div>
+      <span>Location:</span> {{rental.city}}
+    </div>
+    <div>
+      <span>Number of bedrooms:</span> {{rental.bedrooms}}
+    </div>
+  </article>
+</section>
 {{/each}}
 {{outlet}}
