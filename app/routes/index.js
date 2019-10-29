@@ -5,3 +5,4 @@ redirect() {
 	this.transitionTo('collectie');
 }
 });
+

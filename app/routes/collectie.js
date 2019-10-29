@@ -1,57 +1,46 @@
 import Route from '@ember/routing/route';
+//import fetch from 'fetch';
+// import { encode } from 'punycode';
+
+const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-09/sparql"
+const query = `
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+SELECT ?cho ?title ?type ?description ?picture WHERE {
+   VALUES ?type { "camera" "Camera" "fotocamera" "Fotocamera" "cameratas" "filmcamera" "Foto" "foto" "Negatief" "negatief" "Glasnegatief" "glasnegatief" "Dia" "dia" "Kleurendia" "kleurendia" "Lichtbeeld" "lichtbeeld"}
+   ?cho dc:type ?type;
+   dc:title ?title;
+   dc:description ?description;
+   edm:isShownBy ?picture.
+}
+`
 
 export default Route.extend({
   model() {
-    return [{
-      id: 'grand-old-mansion',
-      title: 'Grand Old Mansion',
-      owner: 'Veruca Salt',
-      city: 'San Francisco',
-      category: 'Estate',
-      bedrooms: 15,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg',
-      description: 'This grand old mansion sits on over 100 acres of rolling hills and dense redwood forests.'
-    }, {
-      id: 'urban-living',
-      title: 'Urban Living',
-      owner: 'Mike TV',
-      city: 'Seattle',
-      category: 'Condo',
-      bedrooms: 1,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg',
-      description: 'A commuters dream. This rental is within walking distance of 2 bus stops and the Metro.'
-    }, {
-      id: 'downtown-charm',
-      title: 'Downtown Charm',
-      owner: 'Violet Beauregarde',
-      city: 'Portland',
-      category: 'Apartment',
-      bedrooms: 3,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg',
-      description: 'Convenience is at your doorstep with this charming downtown rental. Great restaurants and active night life are within a few feet.'
-    }];
+    return fetch(url+"?query="+ encodeURIComponent(query) +"&format=json") 
+    .then(res => res.json())
+    .then(json => {
+      console.log(json.results.bindings)
+
+    let bindings = json.results.bindings
+
+    for (let i=0; i < bindings.length; i ++){
+      let item = bindings [i]
+
+    item.cho = item.cho.value
+    item.title = item.title.value
+    item.description = item.description.value
+    item.type = item.type.value
+    //item.img = item.collectieImg.value
+    }
+     console.log(bindings)
+    return bindings
+    })
   }
 });
 
-/*----- functie om het favorietenhartje te vullen -----*/
-
-// var hartjes = 'leeg';
-// var hartjesImage = document.querySelector('.harticoon');
-// hartjesImage.addEventListener('click', hartjesvullen);
-
-
-/*function hartjesvullen() {
-    if (hartjes =='leeg') {
-        hartjesImage.src = '../web/images/hartjeingekleurd.png';
-        hartjes = 'vol';
-        document.getElementById("likecount").innerHTML = "&#10122;";
-        document.getElementById("likecountSmall").innerHTML = "&#10122;";
-        return hartjes;
-    } else {
-        hartjesImage.src = '../web/images/hartjeicoon.png';
-        hartjes = 'leeg';
-        document.getElementById("likecount").innerHTML = "";
-        document.getElementById("likecountSmall").innerHTML = "";
-        return hartjes;
-    }
-}*/

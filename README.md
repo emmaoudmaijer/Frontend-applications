@@ -47,4 +47,4 @@ Specify what it takes to deploy your app.
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
 ## Licence:
-ISC Emma Oudmaijer
+ISC [Emma Oudmaijer](https://github.com/emmaoudmaijer/Frontend-applications)
