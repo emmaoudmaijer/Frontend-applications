@@ -1,26 +1,26 @@
 <div class="container">
   <div class="nav">
     {{#link-to "index"}}
-      <h1>
-        Film/Foto collectie
-      </h1>
+    <h1>
+      Film/Foto collectie
+    </h1>
     {{/link-to}}
     <div class="links">
       {{#link-to "collectie" class="menu-about"}}
-        Collectie
+      Collectie
       {{/link-to}}
       {{#link-to "about" class="menu-contact"}}
-        Over ons
+      Over ons
       {{/link-to}}
-	  {{#link-to "opgeslagen" class="menu-contact"}}
-        Opgeslagen
+      {{#link-to "opgeslagen" class="menu-contact"}}
+      Opgeslagen
       {{/link-to}}
-	  {{#link-to "about" class="menu-contact"}}
-        Zoeken
+      {{#link-to "about" class="menu-contact"}}
+      Zoeken
       {{/link-to}}
     </div>
   </div>
-  <div class="body">
-    {{outlet}}
-  </div>
+  {{!-- <div class="body">
+  </div> --}}
 </div>
+{{outlet}}

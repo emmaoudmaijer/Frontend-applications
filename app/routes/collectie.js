@@ -32,3 +32,26 @@ export default Route.extend({
     }];
   }
 });
+
+/*----- functie om het favorietenhartje te vullen -----*/
+
+// var hartjes = 'leeg';
+// var hartjesImage = document.querySelector('.harticoon');
+// hartjesImage.addEventListener('click', hartjesvullen);
+
+
+/*function hartjesvullen() {
+    if (hartjes =='leeg') {
+        hartjesImage.src = '../web/images/hartjeingekleurd.png';
+        hartjes = 'vol';
+        document.getElementById("likecount").innerHTML = "&#10122;";
+        document.getElementById("likecountSmall").innerHTML = "&#10122;";
+        return hartjes;
+    } else {
+        hartjesImage.src = '../web/images/hartjeicoon.png';
+        hartjes = 'leeg';
+        document.getElementById("likecount").innerHTML = "";
+        document.getElementById("likecountSmall").innerHTML = "";
+        return hartjes;
+    }
+}*/

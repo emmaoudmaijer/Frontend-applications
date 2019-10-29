@@ -1,6 +1,10 @@
 <div class="jumbo">
   <div class="right tomster"></div>
-  <h2>Collecties</h2>
+  <div class="titelhomepagina">
+    <h1>Film & foto collectie van het NMVW</h1>
+    <a onclick="closeHomePageImg()">Bekijk collectie</a>
+  </div> 
+<h2>Collectie</h2>
   <p>
     Hier vind je alle voorwerpen die met film/foto's te maken hebben uit het nationaal museum voor wereldculturen
   </p>
@@ -9,7 +13,7 @@
   {{/link-to}}
 </div>
 {{#each this.model as |rental|}}
-  <h2>2019</h2>
+<h2>2019</h2>
 <section>
   <article>
     <h3>{{rental.title}}</h3>
@@ -25,6 +29,7 @@
     <div>
       <span>Number of bedrooms:</span> {{rental.bedrooms}}
     </div>
+    {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
   </article>
   <article>
     <h3>{{rental.title}}</h3>
@@ -40,9 +45,10 @@
     <div>
       <span>Number of bedrooms:</span> {{rental.bedrooms}}
     </div>
+    {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2" onclick="hartjesvullen(this)"> --}}
   </article>
 </section>
-  <h2>2018</h2>
+<h2>2018</h2>
 <section>
   <article>
 
@@ -77,7 +83,7 @@
     </div>
   </article>
 </section>
- <h2>2017</h2>
+<h2>2017</h2>
 <section>
   <article>
 
