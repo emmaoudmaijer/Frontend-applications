@@ -18,7 +18,7 @@ SELECT ?cho ?title ?type ?description ?picture WHERE {
    dc:description ?description;
    edm:isShownBy ?picture.
 }
-`
+`//edm:isShownBy ?picture.
 
 export default Route.extend({
   model() {
@@ -34,9 +34,9 @@ export default Route.extend({
 
     item.cho = item.cho.value
     item.title = item.title.value
-    item.description = item.description.value
+    item.description = item.description.value.replace(/<[^>]+>/g, '')
     item.type = item.type.value
-    //item.img = item.collectieImg.value
+    item.img = item.picture.value
     }
      console.log(bindings)
     return bindings
