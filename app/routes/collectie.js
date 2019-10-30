@@ -1,6 +1,4 @@
 import Route from '@ember/routing/route';
-//import fetch from 'fetch';
-// import { encode } from 'punycode';
 
 const url = "https://api.data.netwerkdigitaalerfgoed.nl/datasets/ivo/NMVW/services/NMVW-09/sparql"
 const query = `
@@ -11,21 +9,25 @@ PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX edm: <http://www.europeana.eu/schemas/edm/>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-SELECT ?cho ?title ?type ?description ?picture WHERE {
-   VALUES ?type { "camera" "Camera" "fotocamera" "Fotocamera" "cameratas" "filmcamera" "Foto" "foto" "Negatief" "negatief" "Glasnegatief" "glasnegatief" "Dia" "dia" "Kleurendia" "kleurendia" "Lichtbeeld" "lichtbeeld"}
-   ?cho dc:type ?type;
-   dc:title ?title;
-   dc:description ?description;
-   edm:isShownBy ?picture.
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT ?cho ?title ?type (SAMPLE(?description) AS ?description) (SAMPLE(?picture) AS ?picture) WHERE {
+  VALUES ?type { "camera" "Camera" "fotocamera" "Fotocamera" "cameratas" "cameratassen" "Cameratassen" "filmcamera" "film" "filmtassen" "sepia" "fototas" "Film" "Cameratas"}
+  ?cho dc:type ?type;
+  dc:title ?title;
+  edm:isShownBy ?picture .
+  OPTIONAL {?cho dc:description ?description} .
+  FILTER langMatches(lang(?title), "ned")
 }
-`//edm:isShownBy ?picture.
+`
+//OPTIONAL {?cho dc:description ?description} .
 
+ // FILTER langMatches(lang(?title), "ned")
 export default Route.extend({
   model() {
     return fetch(url+"?query="+ encodeURIComponent(query) +"&format=json") 
     .then(res => res.json())
     .then(json => {
-      console.log(json.results.bindings)
+      //console.log(json.results.bindings)
 
     let bindings = json.results.bindings
 
@@ -34,7 +36,7 @@ export default Route.extend({
 
     item.cho = item.cho.value
     item.title = item.title.value
-    item.description = item.description.value.replace(/<[^>]+>/g, '')
+    // item.description = item.description.value.replace(/<[^>]+>/g, '')
     item.type = item.type.value
     item.img = item.picture.value
     }

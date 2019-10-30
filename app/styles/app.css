@@ -11,16 +11,6 @@
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.links {
-    color: #ffffff;
-    font-family: nunito, sans serif;
-    font-size: 1.2em;
-	margin-top: 1em;
-	padding-left: 1.5em;
-	font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-}
-
 li:hover {
         transform: scale(1.05) !important;
 }
@@ -37,7 +27,7 @@ a {
 }
 
 a:hover {
-    color: #db691c !important;
+    color: white !important;
     text-decoration: none !important;
 }
 
@@ -83,10 +73,20 @@ section {
 
 /*---------- Algemene stijl als het scherm breder is dan 53em  ----------*/
 
-@media only screen and (min-width: 53em) {
+@media only screen and (min-width: 70em) {
     .ul_topmenu {
         display: inline-block;
         margin: 0.15em;
+    }
+    .links {
+        color: #ffffff;
+        font-family: nunito, sans serif;
+        font-size: 1.2em;
+        margin-top: 1.5em;
+        padding-left: 0.7em;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        letter-spacing: 0.1em;
+    
     }
     header li {
         display: inline-block;
@@ -113,7 +113,7 @@ section {
         font-size: 0.5em;
         padding: 0.8em;
     }
-    header .logo {
+    a .logo {
         float: left;
         padding-top: 0em;
     }
@@ -130,7 +130,14 @@ section {
         margin-right: 20%;
         margin-top:-1.5em;
     }
-    
+    a .logo {
+        letter-spacing: 0.2em;
+        font-size: 1.8em;
+        text-align: left;
+        padding: 0.7em 0em 2em 0em;
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
 }
 /*------------------------------------STIJL VOOR DIV OP DE HOMEPAGINA MET AFBEELDING------------------------------------------*/
 div.titelhomepagina{
@@ -147,12 +154,12 @@ div.titelhomepagina{
 }
 
  .titelhomepagina h1 {
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: left;
-    padding: 1em 0em 1em 2em;
+    padding: 1em 1em 2em 2em;
     color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 } 
-
 .titelhomepagina a {
     font-weight: 700;
     font-size: 0.8rem;
@@ -177,8 +184,11 @@ div.titelhomepagina{
 
 /*---------- Algemene stijl als het scherm smaller is dan 53em  (bijv. mobiel) -------*/
 
-@media only screen and (max-width: 53em) {
+@media only screen and (max-width: 70em) {
     .ul_topmenu {
+        display: none;
+    }
+    .links {
         display: none;
     }
     header .logo {
@@ -187,7 +197,6 @@ div.titelhomepagina{
     }
     .menu__btn {
         font-family: sans-serif;
-        ;
         font-size: 1em;
     }
     a {
@@ -195,7 +204,9 @@ div.titelhomepagina{
         color: inherit;
     }
     
-    
+    a .logo {
+        display: none;
+        }
     
     
     /*--ANIMATIE 1 VOOR MENU --*/
@@ -204,18 +215,19 @@ div.titelhomepagina{
         float: left;
         background: none;
         border: none;
-        padding: 2em 0.5em;
+        padding: 0em 0.5em;
         margin-left: 0.5em;
         
     }
     .menu__label {
         float: left;
-        writing-mode: vertical-lr;
+        writing-mode: horizontal-tb;
         font-size: 1.6em;
         letter-spacing: 0.1em;
         font-weight: bold;
         color: #ffffff;
         width: 0.625em;
+        padding-top: 0.5em;
     }
     .menu__title {
         font-size: 1.9em;
@@ -300,18 +312,7 @@ div.titelhomepagina{
     .menu__btn:hover .menu__bg-layer-1 {
         transition-delay: 0.2s;
     }
-    
-    button.verrasme{
-        display: none;
-    }
-    h2.subtitel{ 
-        font-family: 'Arima Madurai', cursive;
-        color:#717171;
-        font-size: 3em;
-        text-align: center;
-        margin-left: 20%;
-        margin-right: 20%;
-    }
+
 }
 
 
@@ -327,20 +328,33 @@ img.subtitelStreep{
     justify-content: center;
     padding-bottom: 2em;
 }
-h2 {
-    font-family: 'Arima Madurai', cursive;
+
+.titelpagina {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color:#717171;
-    font-size: 2.5em;
+    font-size: 2em;
+    font-weight: 100;
+    text-align: center;
+}
+
+h3.year {
+    font-family: 'Arima Madurai', cursive;
+    color: rgb(85, 86, 90);
+    font-style: normal;
+    font-size: 3rem;
+    line-height: 2rem;
+    font-weight: 100;
+    margin-bottom: 0.4em;
 }
 
 h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: rgb(85, 86, 90);
     font-style: normal;
-    font-size: 1.2rem;
-    line-height: 2.4rem;
-    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 100;
     margin-bottom: 0.3em;
-    text-align: center;  
 }
 
 p  {
@@ -405,8 +419,9 @@ article {
     margin-right: 3em;
     margin-bottom: 3em;
     margin-left: 2em;
+    padding-bottom: 1em;
     text-align: center;
-    width:30em;
+    width:25em;
     font-size: 1em;
     font-weight: 300;
     line-height: 2.2rem;
@@ -423,13 +438,14 @@ article {
 
 article img {
     border-radius: 0.7em;
-    width: 30em;
+    width: 25em;
     height: 16em;
     display: block;
 }
 
 article a {
     font-weight: 200;
+    padding: 0.5em 4em 0.5em 4em;
     font-size: 1.0rem;
     line-height: 2.5rem;
     background-color: #00aaa0;;
@@ -440,7 +456,7 @@ article a {
     text-align: center;
     text-transform: uppercase;
     width: calc(100% - 28px);
-    position: absolute;
+    /* position: absolute; */
     left: 14px;
     border-radius: 4px;
     text-decoration: none;
@@ -494,3 +510,89 @@ article p {
 // var hartjes = 'leeg';
 // var hartjesImage = document.querySelector('.harticoon');
 // hartjesImage.addEventListener('click', hartjesvullen);*/
+
+.filter h2 {
+    font-size: 1em;
+    text-align: left;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.filter label {
+    font-size: 0.9em;
+}
+
+.filter input[type="submit"] {
+    font-size: 1em;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 0.2em;
+}
+.filter legend {
+    font-size: 2.5em;
+}
+
+.filter fieldset {
+    margin: 0em 3em 0em 3em;
+    border-color: black;
+}
+
+.filter input[type="checkbox"] {
+    width: 1em;
+}
+
+.filtericon {
+    margin-top: 1em;
+    font-size: 1.5em;
+    font-weight: 100;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.sidenav {
+    height: 85em;
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 111;
+    left: 8px;
+    background-color: skyblue;
+    overflow-x: hidden;
+    padding-top: 2em;
+    transition: 0.5s;
+    margin-top: -1em;
+}
+
+.sidenav a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.sidenav ul {
+    background-color: skyblue;
+    padding: 0;
+}
+
+.sidenav li {
+    text-align: left;
+    background-color: skyblue;
+    border: 0em;
+    padding: 0;
+    font-size: 0.8em;
+}
+
+.sidenav input[type="submit"] {
+    margin: 1em 0em 1em 3em;
+    text-align: center;
+    width: 11em;
+    font-size: 2em;
+}

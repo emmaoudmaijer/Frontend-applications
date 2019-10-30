@@ -1,9 +1,26 @@
 <div class="container">
   <div class="nav">
     {{#link-to "index"}}
-    <h1>
+    <a href="collectie.hbs" class= "logo">
       Film/Foto collectie
-    </h1>
+    </a>
+    <button class="menu__btn">
+        <span class="menu__label">MENU</span>
+
+        <div class="menu--hidden">
+            <div class="menu__bg-layer menu__bg-layer-2"></div>
+            <div class="menu__bg-layer menu__bg-layer-1"></div>
+            <div class="menu__container">
+                <span class="menu__title">Menu</span>
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="index.html">Collectie</a></li>
+                    <li class="menu__item"><a href="Voorjou.html">Over ons</a></li>
+                    <li class="menu__item"><a href="download.html">Opgeslagen<span id="dllinkSmall" class="dllink"></span></a></li>
+                    <li class="menu__item"><a href="">Zoeken<span id="likecountSmall" class="likecount"></span></a></li>
+                </ul>
+            </div>
+        </div>
+    </button>
     {{/link-to}}
     <div class="links">
       {{#link-to "collectie" class="menu-about"}}

@@ -4,27 +4,96 @@
     <h1>Film & foto collectie van het NMVW</h1>
     <a onclick="closeHomePageImg()">Bekijk collectie</a>
   </div> 
+
+  <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2>Filter</h2>
+
+        <form class="filter" action="index2.html">
+          <fieldset>
+              <legend>Genre</legend>
+            <ul>
+                <li>
+                    <label><input type="checkbox" name="stars" value="1" checked="checked" /> Agressief</label>
+                </li>
+               <li> 
+                   <label><input type="checkbox" name="stars" value="3" checked="checked" /> Drama</label></li>
+                <li>
+                    <label><input type="checkbox" name="stars" value="5" checked="checked" /> Humor</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="stars" value="1" checked="checked" /> Liefde</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="stars" value="3" checked="checked" /> Somber</label></li>
+                <li>
+                    <label><input type="checkbox" name="stars" value="5" checked="checked" /> Spanning</label>
+                </li>
+            </ul>
+            </fieldset>
+            <fieldset>
+            <legend>Lengte verhaal</legend>
+            <ul>
+                <li>
+                <label><input type="checkbox" name="lengte" value="1" checked="checked" /> Kort</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="lengte" value="3" checked="checked" /> Middel</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="lengte" value="5" checked="checked" /> Lang</label>
+                </li>
+
+            </ul>
+            </fieldset>
+             <fieldset>
+              <legend>Sorteren</legend>
+            <ul>
+                <li>
+                    <label><input type="checkbox" name="sorteren" value="1" checked="checked" /> Van A tot Z</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="sorteren" value="3" checked="checked" /> Van Z tot A</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="sorteren" value="5" checked="checked" /> Van kort naar lang</label>
+                </li>
+                <li>
+                    <label><input type="checkbox" name="sorteren" value="5" checked="checked" /> Van lang naar kort
+                </label></li>
+
+            </ul>
+         </fieldset>
+         <input type="submit" name="subscribe" value="Toepassen"/>
+         
+        </form>
+
+    </div>
+
+    <h2 class="filtericon" onclick="openNav()">Filter</h2>
+</div>
+<div class="titelpagina">
 <h2>Collectie</h2>
+</div>
   <p>
     Hier vind je alle voorwerpen die met film/foto's te maken hebben uit het nationaal museum voor wereldculturen
   </p>
-  {{#link-to "opgeslagen" class="button"}}
+  {{!-- {{#link-to "opgeslagen" class="button"}}
   Opgeslagen
-  {{/link-to}}
-</div>
+  {{/link-to}} --}}
 
 {{#each this.model as |collectie|}}
-<h2>2019</h2>
+<h3 class="year">2019</h3>
 <section>
   <article>
          <div>
       <span><img src="{{collectie.img}}"></span>
     </div>
     <h3>{{collectie.title}}</h3>
-    <div>
+    {{!-- <div>
       <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div>
-      <span>Details:</span> <a href="{{collectie.cho}}">Lees meer</a>
+    </div> --}}
+      <a href="{{collectie.cho}}">Lees meer</a>
     {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
   </article>
   <article>
@@ -32,24 +101,21 @@
       <span><img src="{{collectie.img}}"></span>
     </div>
     <h3>{{collectie.title}}</h3>
-    <div>
-      <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div>
-      <span>Details:</span> <a href="{{collectie.cho}}">Lees meer</a>
+      <a href="{{collectie.cho}}">Lees meer</a>
     {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
   </article>
 </section>
-<h2>2018</h2>
+<h3 class="year">2018</h3>
 <section>
   <article>
          <div>
       <span><img src="{{collectie.img}}"></span>
     </div>
     <h3>{{collectie.title}}</h3>
-    <div>
+    {{!-- <div>
       <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div>
-      <span>Details:</span> <a href="{{collectie.cho}}">Lees meer</a>
+    </div> --}}
+      <a href="{{collectie.cho}}">Lees meer</a>
     {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
   </article>
   <article>
@@ -57,24 +123,18 @@
       <span><img src="{{collectie.img}}"></span>
     </div>
     <h3>{{collectie.title}}</h3>
-    <div>
-      <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div>
-      <span>Details:</span> <a href="{{collectie.cho}}">Lees meer</a>
+      <a href="{{collectie.cho}}">Lees meer</a>
     {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
   </article>
 </section>
-<h2>2017</h2>
+<h3 class="year">2017</h3>
 <section>
   <article>
     <div>
       <span><img src="{{collectie.img}}"></span>
     </div>
     <h3>{{collectie.title}}</h3>
-    <div>
-      <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div>
-      <span>Details:</span> <a href="{{collectie.cho}}">Lees meer</a>
+      <a href="{{collectie.cho}}">Lees meer</a>
   </article>
 
   <article>
@@ -82,10 +142,10 @@
       <span><img src="{{collectie.img}}"></span>
     </div>
     <h3>{{collectie.title}}</h3>
-    <div>
+    {{!-- <div>
       <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div>
-      <span>Details:</span> <a href="{{collectie.cho}}">Lees meer</a>
+    </div> --}}
+      <a href="{{collectie.cho}}">Lees meer</a>
   </article>
 </section>
 
