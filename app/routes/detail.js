@@ -34,11 +34,11 @@ export default Route.extend({
       .then(json => {
         //console.log(json.results.bindings)
 
-        let bindings = json.results.bindings
+        let resultaten = json.results.bindings
 
-        for (let i = 0; i < bindings.length; i++) {
+        for (let i = 0; i < resultaten.length; i++) {
           //if(object_url == bindings[i].cho.split("/").pop() ){	
-          let item = bindings[i]
+          let item = resultaten[i]
           item.cho = item.cho.value
           item.title = item.title.value
           // item.description = item.description.value.replace(/<[^>]+>/g, '')
@@ -49,11 +49,11 @@ export default Route.extend({
 
 
         let newObject;
-        for (let i = 0; i < bindings.length; i++) {
+        for (let i = 0; i < resultaten.length; i++) {
           //console.log(bindings[0].cho.split("/").pop());
-          if (object_url == bindings[i].cho.split("/").pop()) {
+          if (object_url == resultaten[i].cho.split("/").pop()) {
             // console.log(bindings[i]);
-			newObject = bindings[i];
+			newObject = resultaten[i];
           }
         }
 
@@ -62,7 +62,7 @@ export default Route.extend({
 		return newObject;
 
 
-	  })
+	})
     // }
 
 

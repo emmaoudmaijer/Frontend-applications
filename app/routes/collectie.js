@@ -19,9 +19,7 @@ SELECT ?cho ?title ?type (SAMPLE(?description) AS ?description) (SAMPLE(?picture
   FILTER langMatches(lang(?title), "ned")
 }
 `
-//OPTIONAL {?cho dc:description ?description} .
 
- // FILTER langMatches(lang(?title), "ned")
 export default Route.extend({
   model() {
     return fetch(url+"?query="+ encodeURIComponent(query) +"&format=json") 
@@ -29,28 +27,19 @@ export default Route.extend({
     .then(json => {
       //console.log(json.results.bindings)
 
-    let bindings = json.results.bindings
+    let resultaten = json.results.bindings
 
-    for (let i=0; i < bindings.length; i ++){
-      let item = bindings [i]
+    for (let i=0; i < resultaten.length; i ++){
+      let item = resultaten [i]
     item.cho = item.cho.value.split("/").pop();
     item.title = item.title.value
     // item.description = item.description.value.replace(/<[^>]+>/g, '')
     item.type = item.type.value
     item.img = item.picture.value
     }
-    console.log(bindings)
-    return bindings
+    console.log(resultaten)
+    return resultaten
     })
     }
-    // .get('/collectie', function(db, request) {
-    //   if(request.queryParams.city !== undefined) {
-    //     let filteredRentals = rentals.filter(function(i) {
-    //       return i.attributes.city.toLowerCase().indexOf(request.queryParams.city.toLowerCase()) !== -1;
-    //     });
-    //    return { data: filteredRentals };
-    //   } else {
-    //     return { data: collectie };
-  // });
 
 });
