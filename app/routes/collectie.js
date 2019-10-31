@@ -33,7 +33,7 @@ export default Route.extend({
 
     for (let i=0; i < bindings.length; i ++){
       let item = bindings [i]
-    item.cho = item.cho.value
+    item.cho = item.cho.value.split("/").pop();
     item.title = item.title.value
     // item.description = item.description.value.replace(/<[^>]+>/g, '')
     item.type = item.type.value

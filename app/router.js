@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('collectie');
   this.route('opgeslagen');
   this.route('about');
-  this.route('detail');
+  this.route('detail', {path: 'detail/:url'});
 });
 
 export default Router;

@@ -1,1 +1,29 @@
+ 
+{{!--    
+     <div>
+        <span>Omschrijving</span> <p>{{collectie.description}}</p>
+      </div> 
+	   
+	   <h1>Film & foto collectie van het NMVW</h1>
+	   <div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>About Super Rentals</h2>
+  <p>
+    The Super Rentals website is a delightful project created to explore Ember.
+    By building a property rental site, we can simultaneously imagine traveling
+    AND building Ember applications.
+  </p>
+</div> --}}
+
+ {{#each this.model as |collectie|}}
+ <article>
+<span><img src="{{collectie.img}}"></span>
+      <h3>{{collectie.title}}</h3>
+      <p>{{collectie.description}}</p>  
+      <p>{{collectie.cho}}</p>
+      <a href="detail/{{collectie.cho}}">Lees meer</a>
+    </article>
+    
+  {{/each}}
+
 {{outlet}}

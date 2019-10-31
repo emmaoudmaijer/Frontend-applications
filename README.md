@@ -5,6 +5,29 @@ Afbeelding van applicatie
 
 ### Hoe werkt het?
 
+## Proces
+Als je meer wilt weten over mijn proces kun je de wiki bekijken
+[Wiki]()
+
+## Data met SPARQL
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX edm: <http://www.europeana.eu/schemas/edm/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dbo: <http://dbpedia.org/ontology/> 
+SELECT ?cho ?title ?type (SAMPLE(?description) AS ?description) (SAMPLE(?picture) AS ?picture) WHERE {
+  VALUES ?type { "camera" "Camera" "fotocamera" "Fotocamera" "cameratas" "cameratassen" "Cameratassen" "filmcamera" "film" "filmtassen" "sepia" "fototas" "Film" "Cameratas"}
+  ?cho dc:type ?type;
+  dc:title ?title;
+  edm:isShownBy ?picture .
+  OPTIONAL {?cho dc:description ?description} .
+  FILTER langMatches(lang(?title), "ned")
+}
+```
+
 ## Installation
 
 * `git clone <repository-url>` this repository

@@ -91,24 +91,20 @@
         <span><img src="{{entry.img}}"></span>
       </div>
       <h3>{{entry.title}}</h3>
-      {{!-- <div>
-        <span>Omschrijving</span> <p>{{collectie.description}}</p>
-      </div> --}}
-        <a href="{{entry.cho}}">Lees meer</a>
-      {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
+      <a href="detail/{{entry.cho}}">Lees meer</a>
     </article>
 
   {{/each}}
 
 
 </section>
-
+{{!-- 
 <ListFilter @filter={{action "filterByCity"}} as |filteredResults|>
   <ul class="results">
     {{#each filteredResults as |rentalUnit|}}
       <li><RentalListing @rental={{rentalUnit}} /></li>
     {{/each}}
   </ul>
-</ListFilter>
+</ListFilter> --}}
 
 {{outlet}}
