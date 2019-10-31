@@ -21,70 +21,67 @@ SELECT ?cho ?title ?type (SAMPLE(?description) AS ?description) (SAMPLE(?picture
 `
 //OPTIONAL {?cho dc:description ?description} .
 
- // FILTER langMatches(lang(?title), "ned")
+// FILTER langMatches(lang(?title), "ned")
 export default Route.extend({
-  model: function(params) {
-	let object_url = params.url
-	console.log(object_url);
-	
+  model: function (params) {
+    let object_url = params.url
+    console.log(object_url);
 
 
-			return fetch(url+"?query="+ encodeURIComponent(query) +"&format=json") 
-			.then(res => res.json())
-			.then(json => {
-			//console.log(json.results.bindings)
 
-			let bindings = json.results.bindings
+    return fetch(url + "?query=" + encodeURIComponent(query) + "&format=json")
+      .then(res => res.json())
+      .then(json => {
+        //console.log(json.results.bindings)
 
-			for (let i=0; i < bindings.length; i ++){
-				//if(object_url == bindings[i].cho.split("/").pop() ){	
-				let item = bindings [i]
-						item.cho = item.cho.value
-						item.title = item.title.value
-						// item.description = item.description.value.replace(/<[^>]+>/g, '')
-						item.type = item.type.value
-						item.img = item.picture.value
-				}
-		
+        let bindings = json.results.bindings
 
-
-		let newObject;
-		for (let i=0; i < bindings.length; i ++){
-				//console.log(bindings[0].cho.split("/").pop());
-				if(object_url == bindings[i].cho.split("/").pop() ){
-					// console.log(bindings[i]);
-					newObject = bindings[i];
-					
-				}
-
-			}
-			
-			console.log(newObject);
+        for (let i = 0; i < bindings.length; i++) {
+          //if(object_url == bindings[i].cho.split("/").pop() ){	
+          let item = bindings[i]
+          item.cho = item.cho.value
+          item.title = item.title.value
+          // item.description = item.description.value.replace(/<[^>]+>/g, '')
+          item.type = item.type.value
+          item.img = item.picture.value
+        }
 
 
-			return bindings;
 
-			
-			})
-		// }
+        let newObject;
+        for (let i = 0; i < bindings.length; i++) {
+          //console.log(bindings[0].cho.split("/").pop());
+          if (object_url == bindings[i].cho.split("/").pop()) {
+            // console.log(bindings[i]);
+			newObject = bindings[i];
+          }
+        }
 
-		
-	
+        console.log(newObject);
+
+		return newObject;
+
+
+	  })
+    // }
+
+
+
   }
-	
-	
 
-	
-	
 
-    // .get('/collectie', function(db, request) {
-    //   if(request.queryParams.city !== undefined) {
-    //     let filteredRentals = rentals.filter(function(i) {
-    //       return i.attributes.city.toLowerCase().indexOf(request.queryParams.city.toLowerCase()) !== -1;
-    //     });
-    //    return { data: filteredRentals };
-    //   } else {
-    //     return { data: collectie };
+
+
+
+
+  // .get('/collectie', function(db, request) {
+  //   if(request.queryParams.city !== undefined) {
+  //     let filteredRentals = rentals.filter(function(i) {
+  //       return i.attributes.city.toLowerCase().indexOf(request.queryParams.city.toLowerCase()) !== -1;
+  //     });
+  //    return { data: filteredRentals };
+  //   } else {
+  //     return { data: collectie };
   // });
 
 });

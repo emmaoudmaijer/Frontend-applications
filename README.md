@@ -1,6 +1,6 @@
 # applicatie-filmliefhebbers
 * [De applicatie](https://voorwerpen-nwcm.herokuapp.com/collectie)
-Afbeelding van applicatie 
+![De applicatie](/images/collectiehomepage.png)
 ## Concept
 
 ### Hoe werkt het?
