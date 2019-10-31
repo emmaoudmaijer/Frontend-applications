@@ -87,5 +87,9 @@ SELECT ?cho ?title ?type (SAMPLE(?description) AS ?description) (SAMPLE(?picture
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
+## Hulp
+
+Special thanks to Nick Meijer en Eyob voor het uitleggen van sparql en het helpen bij de detailpagina.
+
 ## Licence:
 ISC [Emma Oudmaijer](https://github.com/emmaoudmaijer/Frontend-applications)
