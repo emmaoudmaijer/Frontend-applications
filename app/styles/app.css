@@ -11,13 +11,6 @@
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-li:hover {
-        transform: scale(1.05) !important;
-}
-
-li:before {
-    color: #262626;
-}
 a {
     list-style-type: none;
     list-style:none;
@@ -27,7 +20,7 @@ a {
 }
 
 a:hover {
-    color: white !important;
+    color: #00aaa0 !important;
     text-decoration: none !important;
 }
 
@@ -36,39 +29,11 @@ body {
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-.btn {
-    font-size: 1rem;
-    padding: 1em 2em;
-    text-transform: uppercase;
-    border-radius: 5px;
-    background: #333;
-    text-decoration: none;
-    color: #fff;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
-    border: solid 2px #333;
-    font-weight: bold;
-    transition: all .25s ease-in;
-    min-width: 175px;
-    text-align: center;
-    margin: 3em;
-}
-
-.btn:hover {
-    background-color: #db691c;
-    border-color: #db691c;
-}
 section {
 	display: flex;
 	flex-wrap: no-wrap;
 	justify-content: center;
 }
-
-
-
-
 
 
 /*---------- Algemene stijl als het scherm breder is dan 53em  ----------*/
@@ -91,35 +56,7 @@ section {
     .links:hover {
         color: #00aaa0;
     }
-    header li {
-        display: inline-block;
-        text-decoration: none;
-        text-align: center;
-        background-color: transparent;
-        padding: 0em;
-        margin: 0em;
-        margin-top: 1.6em;
-        border: 0px solid;
-        background-color: #31415f;
-        border-top: 3px solid;
-        border-top-color: #31415f;
-    }
-    header li:hover {
-        border-top: 3px solid;
-        border-top-color: #FAEA31;
-    }
-    header a {
-        text-decoration: none;
-        text-align: center;
-        color: white;
-        font-family: arial;
-        font-size: 0.5em;
-        padding: 0.8em;
-    }
-    a .logo {
-        float: left;
-        padding-top: 0em;
-    }
+
     .menu__btn {
         display: none;
     }
@@ -134,6 +71,8 @@ section {
         margin-top:-1.5em;
     }
     a .logo {
+        float: left;
+        padding-top: 0em;
         letter-spacing: 0.2em;
         font-size: 1.8em;
         text-align: left;
@@ -142,6 +81,7 @@ section {
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 }
+
 /*------------------------------------STIJL VOOR DIV OP DE HOMEPAGINA MET AFBEELDING------------------------------------------*/
 div.titelhomepagina{
     width:100%;
@@ -183,9 +123,7 @@ div.titelhomepagina{
 }
 
 
-
-
-/*---------- Algemene stijl als het scherm smaller is dan 53em  (bijv. mobiel) -------*/
+/*--------------------------- Algemene stijl als het scherm smaller is dan 53em  (bijv. mobiel) -----------------------------*/
 
 @media only screen and (max-width: 70em) {
     .ul_topmenu {
@@ -194,10 +132,7 @@ div.titelhomepagina{
     .links {
         display: none;
     }
-    header .logo {
-        margin: auto;
-        padding-top: 0em;
-    }
+
     .menu__btn {
         font-family: sans-serif;
         font-size: 1em;
@@ -476,44 +411,6 @@ article p {
     padding: 0.2em;
 }
 
-
-
-
-/* ---------Stijl voor het hartje inkleuren -------------*/
-/* .harticoon {
-    width: 9em;
-    height: 8em;
-    font-size: 0.8em;
-    margin: auto;
-    padding-left: 5em;
-    display: inline;
-    padding-bottom: 2em;
-    padding-top: 8em;
-} */
-
-/*----- functie om het favorietenhartje te vullen -----*/
-
-
-/*function hartjesvullen() {
-    if (hartjes =='leeg') {
-        hartjesImage.src = '../web/images/hartjeingekleurd.png';
-        hartjes = 'vol';
-        document.getElementById("likecount").innerHTML = "&#10122;";
-        document.getElementById("likecountSmall").innerHTML = "&#10122;";
-        return hartjes;
-    } else {
-        hartjesImage.src = '../web/images/hartjeicoon.png';
-        hartjes = 'leeg';
-        document.getElementById("likecount").innerHTML = "";
-        document.getElementById("likecountSmall").innerHTML = "";
-        return hartjes;
-    }
-
-}
-// var hartjes = 'leeg';
-// var hartjesImage = document.querySelector('.harticoon');
-// hartjesImage.addEventListener('click', hartjesvullen);*/
-
 .filter h2 {
     font-size: 1em;
     text-align: left;
@@ -526,7 +423,7 @@ article p {
 
 .filter input[type="submit"] {
     font-size: 1em;
-    background-color: cadetblue;
+    background-color: white;
     color: white;
     border-radius: 0.2em;
 }
@@ -557,7 +454,7 @@ article p {
     z-index: 1;
     top: 111;
     left: 8px;
-    background-color: skyblue;
+    background-color: white;
     overflow-x: hidden;
     padding-top: 2em;
     transition: 0.5s;
@@ -581,13 +478,13 @@ article p {
 }
 
 .sidenav ul {
-    background-color: skyblue;
+    background-color: white;
     padding: 0;
 }
 
 .sidenav li {
     text-align: left;
-    background-color: skyblue;
+    background-color: white;
     border: 0em;
     padding: 0;
     font-size: 0.8em;
