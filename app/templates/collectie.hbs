@@ -61,7 +61,6 @@
                 <li>
                     <label><input type="checkbox" name="sorteren" value="5" checked="checked" /> Van lang naar kort
                 </label></li>
-
             </ul>
          </fieldset>
          <input type="submit" name="subscribe" value="Toepassen"/>
@@ -82,72 +81,34 @@
   Opgeslagen
   {{/link-to}} --}}
 
-{{#each this.model as |collectie|}}
 <h3 class="year">2019</h3>
 <section>
-  <article>
-         <div>
-      <span><img src="{{collectie.img}}"></span>
-    </div>
-    <h3>{{collectie.title}}</h3>
-    {{!-- <div>
-      <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div> --}}
-      <a href="{{collectie.cho}}">Lees meer</a>
-    {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
-  </article>
-  <article>
-         <div>
-      <span><img src="{{collectie.img}}"></span>
-    </div>
-    <h3>{{collectie.title}}</h3>
-      <a href="{{collectie.cho}}">Lees meer</a>
-    {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
-  </article>
-</section>
-<h3 class="year">2018</h3>
-<section>
-  <article>
-         <div>
-      <span><img src="{{collectie.img}}"></span>
-    </div>
-    <h3>{{collectie.title}}</h3>
-    {{!-- <div>
-      <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div> --}}
-      <a href="{{collectie.cho}}">Lees meer</a>
-    {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
-  </article>
-  <article>
-         <div>
-      <span><img src="{{collectie.img}}"></span>
-    </div>
-    <h3>{{collectie.title}}</h3>
-      <a href="{{collectie.cho}}">Lees meer</a>
-    {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
-  </article>
-</section>
-<h3 class="year">2017</h3>
-<section>
-  <article>
-    <div>
-      <span><img src="{{collectie.img}}"></span>
-    </div>
-    <h3>{{collectie.title}}</h3>
-      <a href="{{collectie.cho}}">Lees meer</a>
-  </article>
 
-  <article>
-         <div>
-      <span><img src="{{collectie.img}}"></span>
-    </div>
-    <h3>{{collectie.title}}</h3>
-    {{!-- <div>
-      <span>Omschrijving</span> <p>{{collectie.description}}</p>
-    </div> --}}
-      <a href="{{collectie.cho}}">Lees meer</a>
-  </article>
+  {{#each this.model as |entry|}}
+
+    <article>
+          <div>
+        <span><img src="{{entry.img}}"></span>
+      </div>
+      <h3>{{entry.title}}</h3>
+      {{!-- <div>
+        <span>Omschrijving</span> <p>{{collectie.description}}</p>
+      </div> --}}
+        <a href="{{entry.cho}}">Lees meer</a>
+      {{!-- <img class="harticoon" src="images/hartjeicoon.png" alt="like icoon2"> --}}
+    </article>
+
+  {{/each}}
+
+
 </section>
 
-{{/each}}
+<ListFilter @filter={{action "filterByCity"}} as |filteredResults|>
+  <ul class="results">
+    {{#each filteredResults as |rentalUnit|}}
+      <li><RentalListing @rental={{rentalUnit}} /></li>
+    {{/each}}
+  </ul>
+</ListFilter>
+
 {{outlet}}

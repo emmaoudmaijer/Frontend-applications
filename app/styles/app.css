@@ -88,6 +88,9 @@ section {
         letter-spacing: 0.1em;
     
     }
+    .links:hover {
+        color: #00aaa0;
+    }
     header li {
         display: inline-block;
         text-decoration: none;
@@ -285,7 +288,7 @@ div.titelhomepagina{
         opacity: 0;
         position: absolute;
         transform: translate(-50%, -50%);
-        background: #1B1D3A;
+        background: #00aaa0;
         height: 0;
         width: 0;
         z-index: 1;
@@ -595,4 +598,9 @@ article p {
     text-align: center;
     width: 11em;
     font-size: 2em;
+}
+
+/*OVER ONS*/
+.overons {
+    padding: 6em;
 }

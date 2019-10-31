@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('collectie');
   this.route('opgeslagen');
   this.route('about');
+  this.route('detail');
 });
 
 export default Router;

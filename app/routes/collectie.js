@@ -33,16 +33,24 @@ export default Route.extend({
 
     for (let i=0; i < bindings.length; i ++){
       let item = bindings [i]
-
     item.cho = item.cho.value
     item.title = item.title.value
     // item.description = item.description.value.replace(/<[^>]+>/g, '')
     item.type = item.type.value
     item.img = item.picture.value
     }
-     console.log(bindings)
+    console.log(bindings)
     return bindings
     })
-  }
-});
+    }
+    // .get('/collectie', function(db, request) {
+    //   if(request.queryParams.city !== undefined) {
+    //     let filteredRentals = rentals.filter(function(i) {
+    //       return i.attributes.city.toLowerCase().indexOf(request.queryParams.city.toLowerCase()) !== -1;
+    //     });
+    //    return { data: filteredRentals };
+    //   } else {
+    //     return { data: collectie };
+  // });
 
+});
