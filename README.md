@@ -23,7 +23,7 @@ Wat ik graag nog zou willen toevoegen aan de applicatie is het volgende:
   * Wat voor manieren zijn er toegepast tijdens het fotograferen? (Sepia en zwart-wit), wat is er bekend over de technische onderdelen van de camera's voor vroeger en nu?
 
 ## Proces
-Als je meer wilt weten over mijn proces kun je de wiki bekijken
+Als je meer wilt weten over mijn proces en wat ik heb geleerd kun je de wiki bekijken
 [Wiki](https://github.com/emmaoudmaijer/Frontend-applications/wiki)
 
 ## Data met SPARQL
